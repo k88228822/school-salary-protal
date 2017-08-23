@@ -41,12 +41,15 @@ app.use(express.static(path.join(project.basePath, 'src2/public')));
 app.use(express.static(path.join(project.basePath, 'dist')));
 app.use(express.static(path.join(project.basePath, 'public')));
 
+app.get('/app/*',(rq,res)=>{
+  res.sendfile(inProjectDist('index.html'));
+})
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  res.sendfile(inProjectDist('index.html'));
-  // var err = new Error('Not Found');
-  // err.status = 404;
-  // next(err);
+  // res.sendfile(inProjectDist('index.html'));
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 // error handler

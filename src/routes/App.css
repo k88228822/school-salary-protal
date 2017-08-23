@@ -1,0 +1,51 @@
+.normal {
+  padding: 13px;
+  background-color: black;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+}
+
+.container {
+  background-color: #FFFFFF;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  align-items: center;
+  flex: 1;
+}
+
+.top {
+  max-width: 920px;
+  width: 100%;
+}
+
+.leftText {
+  font-size: 26px;
+  color: black;
+  font-weight: 600;
+  margin-left: 7px;
+}
+
+.rightContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.linkText {
+  font-size: 13px;
+  color: black;
+}
+
+.contentContainer {
+  display: flex;
+  max-width: 920px;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  margin-right: 5px;
+  margin-top: 40px;
+}
+
