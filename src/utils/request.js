@@ -18,7 +18,8 @@ function checkData(data){
   if(data.successful){
     return data.object
   }
-  const error=new Error(data.errorMessage);
+
+  const error=new Error(data.object.message===undefined?data.object.error:data.object.message);
   throw error;
 }
 

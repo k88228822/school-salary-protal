@@ -5,28 +5,33 @@ import request from '../utils/request';
 import qs ,{ parse } from 'qs';
 import FormDataWrapper from 'object-to-formdata';
 import merge from 'merge-object';
+import {storageTokenKey} from "../components/common/Constants";
 
-const cookieTrue = {
-  credentials: 'include'
-};
-const jsonConf = {
-  headers: {
-    'Content-Type': 'application/json'
+async function POST(url,params,isToken,isJson){
+  let token=window.localStorage.getItem(storageTokenKey)
+  let jsonConf = {
+    headers: {
+      'Authorization':`Bearer ${token===undefined?'':token}`
+    }
   }
-}
-
-async function POST(url,params,isJson){
   if(isJson === undefined){isJson = false};
+  if(isToken=== undefined){isToken= true};
   return request( url,merge({
     method: 'POST',
     body:isJson?JSON.stringify(params):FormDataWrapper(params),
-  },isJson?merge(jsonConf,cookieTrue):cookieTrue));
+  },isToken?jsonConf:''));
 }
 
 async function GET(url,params){
+  let token=window.localStorage.getItem(storageTokenKey)
+  let jsonConf = {
+    headers: {
+      'Authorization':`Bearer ${token===undefined?'':token}`
+    }
+  }
   return request( url + `?${qs.stringify(params)}`,merge({
     method: 'GET',
-  },cookieTrue));
+  },jsonConf));
 }
 
 export {POST,GET}

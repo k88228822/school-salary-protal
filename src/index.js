@@ -3,6 +3,7 @@ import './index.css';
 import { browserHistory} from 'dva/router';
 import { createLogger } from 'redux-logger';
 import {notification} from 'antd';
+import createLoading from 'dva-loading';
 
 // 1. Initialize
 const app = dva({
@@ -10,7 +11,7 @@ const app = dva({
     notification['error']({
       message: `${e.message}`,
       description: ``,
-      duration: 6,
+      duration: 5,
       style:{height:80,paddingBottom:10},
     });
   },
@@ -25,6 +26,7 @@ app.model(require("./models/app"));
 app.model(require("./models/admin"));
 
 // 2. Plugins
+app.use(createLoading());
 // app.use({});
 
 // 3. Model

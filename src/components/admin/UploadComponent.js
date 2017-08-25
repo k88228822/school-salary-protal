@@ -64,3 +64,27 @@ function UploadComponent(props) {
 }
 
 export default UploadComponent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

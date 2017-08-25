@@ -12,7 +12,7 @@ function User(props) {
 }
 
 function mapStateToProps(state) {
-  return {...state.user,...state.app};
+  return {...state.user,...state.app,loading: state.loading.models.user};
 }
 
 export default connect(mapStateToProps)(User);

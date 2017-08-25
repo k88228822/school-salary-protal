@@ -1,18 +1,19 @@
 import React from 'react';
 import styles from './UserComponent.css';
-import {Card} from "antd";
+import {Table, Card, Form, Icon} from "antd";
+const { Column, ColumnGroup } = Table;
 
-function UserComponent() {
+function UserComponent(props) {
   return (
     <div className={styles.normal}>
-      <Card style={{ width: 300 }}>
-        <p>查询</p>
-      </Card>
-      <Card style={{ width: 300 ,marginTop:20}}>
-        <p>hello</p>
-      </Card>
+      <Table
+        loading={props.loading}
+        scroll={{x:'400%'}}
+        style={{width:'100%'}}
+        columns={props.columns}
+        dataSource={props.data} bordered/>
     </div>
   );
 }
 
-export default UserComponent;
+export default Form.create()(UserComponent);

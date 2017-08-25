@@ -17,14 +17,16 @@ class AppComponent extends React.Component {
 
   onItemClick(data) {
     switch (data.key) {
-      case '0':
-        this.props.dispatch(routerRedux.push({pathname: '/app/user',}));
-        break;
       case '1':
-        this.props.dispatch(routerRedux.push({pathname: '/app/admin/upload'}))
+        this.props.dispatch(routerRedux.push({pathname: '/app/user',query:{key:data.key}}));
+        break;
+      case '0':
+        this.props.dispatch(routerRedux.push({pathname: '/app/admin/upload',query:{key:data.key}}))
         break;
       case '2':
-        this.props.dispatch(routerRedux.push({pathname: ''}))
+        let pathname=this.props.rank===0?
+          '/app/admin/changePassword':'/app/user/changePassword'
+        this.props.dispatch(routerRedux.push({pathname,query:{key:data.key}}))
         break;
     }
   }

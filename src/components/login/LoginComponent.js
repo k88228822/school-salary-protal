@@ -11,7 +11,6 @@ function LoginComponent(props) {
     props.form.validateFields((err, values) => {
       if (!err) {
         props.dispatch(createAction('app/login')({...values}))
-        console.log('Received values of form: ', values);
       }
     });
   }
