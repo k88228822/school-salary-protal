@@ -21,7 +21,7 @@
   },
   "proxy": {
     "/api": {
-      "target": "http://localhost:9090/",
+      "target": "http://115.159.211.47:8090/",
       "changeOrigin": true,
       "pathRewrite": { "^/api" : "" }
     }
