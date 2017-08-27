@@ -2,7 +2,7 @@ import {createAction} from "../utils/index";
 import {routerRedux} from 'dva/router'
 import {notification} from 'antd'
 import * as appService from "../services/app";
-import {usernameKey} from "../components/common/Constants";
+import {roleKey, usernameKey} from "../components/common/Constants";
 import {userIdKey} from "../components/common/Constants";
 import {storageTokenKey} from "../components/common/Constants";
 
@@ -50,14 +50,14 @@ export default {
 
     * login({payload}, {call, put}) {
 
-      let response= yield call(appService.login, {username: payload.userName, password: payload.password})
-      let rank=response.roles[0].authority==='ROLE_ADMIN'? 0:1;
+      let response = yield call(appService.login, {username: payload.userName, password: payload.password})
+      let rank = response.roles[0].authority === 'ROLE_ADMIN' ? 0 : 1;
       yield put(createAction('loginSuccess')({rank}))
 
-      window.localStorage.setItem(storageTokenKey,response.token);
-      window.localStorage.setItem(usernameKey,response.username);
-      window.localStorage.setItem(userIdKey,response.id);
-
+      window.localStorage.setItem(storageTokenKey, response.token);
+      window.localStorage.setItem(usernameKey, response.username);
+      window.localStorage.setItem(userIdKey, response.id);
+      window.localStorage.setItem(roleKey, response.roles[0].authority);
       rank === 0 ?
         yield put(routerRedux.push('/app/admin/upload?key=0'))
         :
@@ -97,9 +97,16 @@ export default {
           dispatch(createAction('changeSelectKey')({selectedKey: query.key}))
         }
         if (pathname.startsWith('/app/admin')) {
-          dispatch(createAction('setTitle')({title: adminTitle}))
+          window.localStorage.getItem(roleKey) === 'ROLE_ADMIN' ?
+            dispatch(createAction('setTitle')({title: adminTitle}))
+            :
+            dispatch(routerRedux.push('/app/login'));
+
         } else if (pathname.startsWith('/app/user')) {
-          dispatch(createAction('setTitle')({title: userTitle}))
+          window.localStorage.getItem(roleKey) === 'ROLE_USER' ?
+            dispatch(createAction('setTitle')({title: userTitle}))
+            :
+            dispatch(routerRedux.push('/app/login'))
         } else {
           dispatch(createAction('setTitle')({title: []}))
         }

@@ -2,7 +2,35 @@
 .normal {
   display: flex;
   flex: 1;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tableContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.itemContainer{
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+.itemTop{
+  display: flex;
+  flex-direction: column;
+  background-color: #F7F7F7;
+}
+.topItemContainer{
+  display: flex;
+  flex-direction: row;
+}
+.itemBottom{
+  display: flex;
+  flex-direction: row;
 }

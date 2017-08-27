@@ -7,3 +7,5 @@ export const usernameKey='username';
 
 export const userIdKey="userIdKey";
 
+export const roleKey="roleKey";
+
