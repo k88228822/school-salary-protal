@@ -25,7 +25,7 @@ function UserComponent(props) {
 
       <Table
         loading={props.loading}
-        style={{width:'100%',marginTop:10}}
+        style={{width:'100%',marginTop:10,marginBottom:20}}
         columns={props.column3}
         pagination={false}
         dataSource={props.data} bordered
