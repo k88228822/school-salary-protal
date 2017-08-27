@@ -3,8 +3,6 @@ import {connect} from 'dva';
 import styles from './App.css';
 import {Col, Layout, Menu, Row} from 'antd';
 import {routerRedux} from 'dva/router';
-import {Link} from 'react-router';
-import {createAction} from "../utils/index";
 
 class AppComponent extends React.Component {
 
@@ -52,9 +50,7 @@ class AppComponent extends React.Component {
                       this.props.title.map((item, index) => {
                         return (
                           <Menu.Item key={item.key}>
-                            <Link to={item.url}>
                               <text className={styles.linkText}>{item.title}</text>
-                            </Link>
                           </Menu.Item>
                         );
                       })
