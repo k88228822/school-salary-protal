@@ -1,14 +1,10 @@
 import fetch from 'dva/fetch';
-import {redirectLogin} from "../auth/auth";
 
 function parseJSON(response) {
   return response.json();
 }
 
 function checkStatus(response) {
-  if(response&&response.status===401){
-    redirectLogin()
-  }
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
@@ -23,7 +19,7 @@ function checkData(data) {
     return data.object
   }
 
-  const error = new Error(data.object.message === undefined ? data.object.error : data.object.message);
+  const error=new Error(data.object.message===undefined?data.object.status:data.object.message);
   throw error;
 }
 

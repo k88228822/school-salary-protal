@@ -1,19 +1,24 @@
 import React from 'react';
 import styles from './UploadComponent.css';
 import {Upload, Icon,notification} from 'antd';
+import {baseUrl, storageTokenKey} from "../common/Constants";
 const Dragger = Upload.Dragger;
 
 const theprops = {
   name: 'file',
   multiple: true,
   showUploadList: false,
-  action: '/api/file/postFile',
+  action: baseUrl+'/file/postFile',
+  headers:{
+    'Authorization':`Bearer ${window.localStorage.getItem(storageTokenKey)}`,
+    mode: 'cors',
+  },
   data:{
   },
   onChange(info) {
     const status = info.file.status;
     if (status !== 'uploading'){
-      console.log(info.file, info.fileList);
+      // console.log(info.file, info.fileList);
     }
     if (status === 'done') {
       if(info.file.response.successful) {
@@ -25,7 +30,7 @@ const theprops = {
         });
       }else{
         notification['error']({
-          message: `${info.file.response.errorMessage}`,
+          message: `${info.file.response.object.message}`,
           description: ``,
           duration: 6,
           style:{height:80,paddingBottom:10},
@@ -49,7 +54,7 @@ function UploadComponent(props) {
 
   return (
     <div className={styles.normal}>
-      <div style={{ marginTop: 16, height: 180 }}>
+      <div style={{ marginTop: 100, height: 180 }}>
         <Dragger {...theprops}>
           <p className="ant-upload-drag-icon">
             <Icon type="inbox" />

@@ -1,29 +1,8 @@
 
 import {createAction} from "../utils/index";
 import * as appService from "../services/app";
-import {userIdKey} from "../components/common/Constants";
+import {userIdKey, usernameKey} from "../components/common/Constants";
 
-const data=[
-  {
-    key: '1',
-    firstName: 'John',
-    lastName: 'Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-  }, {
-    key: '2',
-    firstName: 'Jim',
-    lastName: 'Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-  }, {
-    key: '3',
-    firstName: 'Joe',
-    lastName: 'Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-  }
-];
 const column1=[
   { title:'岗位薪资',dataIndex:'jobSalary',key:'jobSalary'},
   { title:'薪级工资',dataIndex:'wagePay',key:'wagePay'},
@@ -95,16 +74,53 @@ const column3=[
       {title:'个人12%',dataIndex:'housePayPersonal',key:'housePayPersonal'},
     ]
   },
-
+]
+const data=[
+  [{
+    achievementSubsidy:'',
+    bearInsurance:'',
+    decimalMedicalPersonal:'',
+    decimalMedicalUnit:'',
+    housePayBase:'',
+    housePayPersonal:'',
+    housePayUnit:'',
+    houseSubsidy:'',
+    id:'',
+    injuryWorkUnsuranceUnit:'',
+    jobSalary:'',
+    jobSubsidy:'',
+    managerSubsidy:'',
+    medicalInsurancePersonal:'',
+    medicalInsuranceUnit:'',
+    medicalPayBase:'',
+    name:'',
+    pensionBase:'',
+    pensionPersonal:'',
+    pensionUnit:'',
+    responsibilitySubsidy:'',
+    salaryCount:'',
+    specialSubsidy:'',
+    subsidy:'',
+    subsidyAdd:'',
+    subsidyCount:'',
+    teacherAssistSubsidy:'',
+    teacherSubsidy:'',
+    time:'',
+    totalSalary:'',
+    unemploymentInsurancePersonal:'',
+    unemploymentInsuranceUnit:'',
+    wagePay:''
+  }],
 ]
 
 export default {
   namespace: 'user',
   state: {
-    data:[],
+    data:data,
     column1,
     column2,
     column3,
+    monthsSelectedKeys:['0'],
   },
   reducers: {
     setData(state,{payload}){
@@ -112,16 +128,24 @@ export default {
        ...state,
        data:payload.data
      }
+    },
+    changeSelectKey(state,{payload}){
+    return {
+      ...state,
+      monthsSelectedKeys:[payload.selectedKey],
+    }
     }
   },
   effects: {
     *getData({payload},{call,put}){
-      let data=yield call(appService.getSalaryData,{id:6})
-        // let data=yield call(appService.getSalaryData,{id:window.localStorage.getItem(userIdKey)})
-        data.map((item,index)=> {
-          item.key = index
-        })
-        yield put(createAction('setData')({data}))
+      let data=yield call(appService.getSalaryData,{username:window.localStorage.getItem(usernameKey)})
+      let temp=[];
+      data.map((item,index)=>{
+        item.key=index;
+        temp.push([item]);
+      })
+      yield put(createAction('setData')({data:temp}))
+
     }
 
   },
