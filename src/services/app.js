@@ -3,15 +3,16 @@
  */
 
 import * as Net from "../utils/net";
+import {baseUrl} from "../components/common/Constants";
 
 export function login(params) {
-  return Net.POST('/api/login',{...params},false)
+  return Net.POST(baseUrl+'/login',{...params},false)
 }
 
 export function changePassword(params) {
-  return Net.POST('/api/updatePassword',{...params})
+  return Net.POST(baseUrl+'/updatePassword',{...params})
 }
 
 export function getSalaryData(params) {
-  return Net.GET('/api/getSalary',{...params})
+  return Net.GET(baseUrl+'/getSalary',{...params})
 }

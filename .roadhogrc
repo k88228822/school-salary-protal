@@ -21,7 +21,8 @@
   },
   "proxy": {
     "/api": {
-      "target": "http://115.159.211.47:8090/",
+//      "target": "http://115.159.211.47:8090/",
+      "target": "http://127.0.0.1:8090/",
       "changeOrigin": true,
       "pathRewrite": { "^/api" : "" }
     }
@@ -34,7 +35,11 @@
   "env": null,
   "theme": null,
   "autoprefixer": {
-    "browsers": ["last 5 versions"]
+    "browsers": [
+      "last 5 versions",
+      "Firefox ESR",
+      "not ie < 9"
+    ]
   },
   "extraPostCSSPlugins": []
 }

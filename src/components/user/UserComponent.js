@@ -1,37 +1,49 @@
 import React from 'react';
 import styles from './UserComponent.css';
-import {Table, Card, Form, Icon} from "antd";
+import {Table, Card, Form, Icon, Button} from "antd";
 
 const {Column, ColumnGroup} = Table;
 
-function UserComponent(props) {
-  return (
-    <div className={styles.normal}>
-      <Table
-      loading={props.loading}
-      style={{width:'100%',marginTop:10}}
-      columns={props.column1}
-      pagination={false}
-      dataSource={props.data} bordered
-      />
+class UserComponent extends React.Component{
 
-      <Table
-        loading={props.loading}
-        style={{width:'100%',marginTop:10}}
-        columns={props.column2}
-        pagination={false}
-        dataSource={props.data} bordered
-      />
+ render(){
+   return(
+     <div ref='exportPdf' className={styles.normal}>
+       <div>
+         <Button onClick={() => {
+           let exportPdf = $(this.refs.exportPdf)
+           $(document).find('body').html(exportPdf)
+           window.print()
+           window.location.reload()
+         }}>test</Button>
+       </div>
+       <Table
+         loading={this.props.loading}
+         style={{width: '100%', marginTop: 10}}
+         columns={this.props.column1}
+         pagination={false}
+         dataSource={this.props.data} bordered
+       />
 
-      <Table
-        loading={props.loading}
-        style={{width:'100%',marginTop:10,marginBottom:20}}
-        columns={props.column3}
-        pagination={false}
-        dataSource={props.data} bordered
-      />
-    </div>
-  );
+       <Table
+         loading={this.props.loading}
+         style={{width: '100%', marginTop: 10}}
+         columns={this.props.column2}
+         pagination={false}
+         dataSource={this.props.data} bordered
+       />
+
+       <Table
+         loading={this.props.loading}
+         style={{width: '100%', marginTop: 10, marginBottom: 20}}
+         columns={this.props.column3}
+         pagination={false}
+         dataSource={this.props.data} bordered
+       />
+     </div>
+
+   )
+ }
 }
 
 export default Form.create()(UserComponent);

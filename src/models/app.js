@@ -53,7 +53,6 @@ export default {
       let response = yield call(appService.login, {username: payload.userName, password: payload.password})
       let rank = response.roles[0].authority === 'ROLE_ADMIN' ? 0 : 1;
       yield put(createAction('loginSuccess')({rank}))
-
       window.localStorage.setItem(storageTokenKey, response.token);
       window.localStorage.setItem(usernameKey, response.username);
       window.localStorage.setItem(userIdKey, response.id);
