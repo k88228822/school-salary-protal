@@ -96,6 +96,9 @@ export default {
 
     *reload({payload},{put}){
       window.localStorage.removeItem(storageTokenKey);
+      window.localStorage.removeItem(usernameKey);
+      window.localStorage.removeItem(userIdKey);
+      window.localStorage.removeItem(roleKey);
       yield put(routerRedux.push('/app/login'));
     }
 

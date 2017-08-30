@@ -4,7 +4,7 @@ import {Upload, Icon,notification} from 'antd';
 import {baseUrl, storageTokenKey} from "../common/Constants";
 const Dragger = Upload.Dragger;
 
-const theprops = {
+let theprops = {
   name: 'file',
   multiple: true,
   showUploadList: false,
