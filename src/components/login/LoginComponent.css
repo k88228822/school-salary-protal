@@ -43,7 +43,8 @@
 }
 .card{
   width: 300px;
-  margin-right: 30px;
+  margin-right: 50px;
+  margin-top: 180px;
 }
 .formInput{
   width: 250px;
@@ -84,7 +85,6 @@
   width: 100%;
   background-color: rgba(255,204,51, 0);
   flex-direction: column;
-  justify-content: center;
   align-items: flex-end;
 }
 .headerImg{
