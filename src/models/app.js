@@ -24,6 +24,7 @@ export default {
     name: '',
     password: '',
     rank: -1,
+    showReload:false,
   },
   reducers: {
     changeSelectKey(state, {payload}) {
@@ -42,6 +43,12 @@ export default {
       return {
         ...state,
         title: payload.title
+      }
+    },
+    setShowReload(state,{payload}){
+      return{
+        ...state,
+        showReload:payload.showReload
       }
     }
   },
@@ -85,6 +92,11 @@ export default {
         style: {height: 80, paddingBottom: 10},
       });
       yield put(routerRedux.push('/app/login'));
+    },
+
+    *reload({payload},{put}){
+      window.localStorage.removeItem(storageTokenKey);
+      yield put(routerRedux.push('/app/login'));
     }
 
   },
@@ -95,6 +107,12 @@ export default {
         if (pathname.indexOf('/app') >= 0 && query !== undefined) {
           dispatch(createAction('changeSelectKey')({selectedKey: query.key}))
         }
+
+        pathname.startsWith('/app/login')?
+          dispatch(createAction('setShowReload')({showReload:false}))
+          :
+          dispatch(createAction('setShowReload')({showReload:true}))
+
         if (pathname.startsWith('/app/admin')) {
           window.localStorage.getItem(roleKey) === 'ROLE_ADMIN' ?
             dispatch(createAction('setTitle')({title: adminTitle}))

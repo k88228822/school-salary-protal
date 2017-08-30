@@ -28,7 +28,7 @@ function LoginComponent(props) {
         </FormItem>
         <FormItem>
           {getFieldDecorator('password', {
-            rules: [{required: true, message: '请输入工号'}],
+            rules: [{required: true, message: '请输入密码'}],
           })(
             <Input prefix={<Icon type="lock" style={{fontSize: 13}}/>} type="password" placeholder="请输入密码"/>
           )}

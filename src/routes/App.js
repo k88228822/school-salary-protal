@@ -3,6 +3,7 @@ import {connect} from 'dva';
 import styles from './App.css';
 import {Col, Layout, Menu, Row} from 'antd';
 import {routerRedux} from 'dva/router';
+import {createAction} from "../utils/index";
 
 class AppComponent extends React.Component {
 
@@ -26,6 +27,11 @@ class AppComponent extends React.Component {
           '/app/admin/changePassword':'/app/user/changePassword'
         this.props.dispatch(routerRedux.push({pathname,query:{key:data.key}}))
         break;
+      case 'reload':
+        console.log('dianji')
+        this.props.dispatch(createAction('app/reload')())
+        break;
+
     }
   }
 
@@ -54,6 +60,13 @@ class AppComponent extends React.Component {
                           </Menu.Item>
                         );
                       })
+                    }
+                    {
+                      this.props.showReload?
+                        <Menu.Item key={'reload'}>
+                          <text className={styles.linkText}>退出登录</text>
+                        </Menu.Item>
+                        :null
                     }
                   </Menu>
                 </div>
