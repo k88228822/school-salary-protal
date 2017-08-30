@@ -72,6 +72,7 @@ function LoginComponent(props) {
     <div className={styles.normal}>
       {renderBg()}
       <div className={styles.contentBg}>
+        {loginForm()}
         <Layout className={styles.layout}>
 
           <Header className={styles.header}>
@@ -79,7 +80,6 @@ function LoginComponent(props) {
           </Header>
 
           <Content className={styles.content}>
-            {loginForm()}
           </Content>
 
           <Footer className={styles.footer}>
