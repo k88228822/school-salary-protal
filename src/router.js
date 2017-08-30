@@ -13,7 +13,6 @@ function RouterConfig({ history }) {
   return (
     <Router history={history}>
       <Route path="/app" component={IndexPage} >
-        <Route path="/app/login" component={Login} />
         <Route path="/app/user" >
           <IndexRoute component={User}/>
           <Route path="/app/user/changePassword" component={PasswordComponent} />
@@ -24,8 +23,7 @@ function RouterConfig({ history }) {
           <Route path="/app/admin/changePassword" component={PasswordComponent} />
         </Route>
       </Route>
-      <Route path="/admin" component={Admin} />
-      <Route path="/table" component={User} />
+      <Route path="/login" component={Login} />
     </Router>
   );
 }
