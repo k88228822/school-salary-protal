@@ -105,10 +105,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bg8.jpg" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/assets/bg8.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="error.xtpl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src2/views/error.xtpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -190,8 +193,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="79" />
-    <option name="y" value="61" />
+    <option name="x" value="386" />
+    <option name="y" value="108" />
     <option name="width" value="1311" />
     <option name="height" value="692" />
   </component>
@@ -277,52 +280,30 @@
             <path>
               <item name="school-salary-protal" type="b2602c69:ProjectViewProjectNode" />
               <item name="school-salary-protal" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="school-salary-protal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="school-salary-protal" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="school-salary-protal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="school-salary-protal" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="school-salary-protal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="school-salary-protal" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="school-salary-protal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="school-salary-protal" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="school-salary-protal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="school-salary-protal" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="school-salary-protal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="school-salary-protal" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="school-salary-protal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="school-salary-protal" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="school-salary-protal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="school-salary-protal" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="school-salary-protal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="school-salary-protal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="school-salary-protal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="school-salary-protal" type="462c0819:PsiDirectoryNode" />
+              <item name="src2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="school-salary-protal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="school-salary-protal" type="462c0819:PsiDirectoryNode" />
+              <item name="src2" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -391,15 +372,15 @@
       <workItem from="1503933524147" duration="21343000" />
       <workItem from="1504059529515" duration="1866000" />
       <workItem from="1504072783287" duration="4442000" />
-      <workItem from="1504081982189" duration="17904000" />
+      <workItem from="1504081982189" duration="18075000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116844000" />
+    <option name="totallyTimeSpent" value="117015000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="79" y="61" width="1311" height="692" extended-state="0" />
+    <frame x="386" y="108" width="1311" height="692" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -434,13 +415,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/www">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1409">
-          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/Admin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -805,6 +779,14 @@
     <entry file="file://$PROJECT_DIR$/src/assets/bg8.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src2/views/error.xtpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

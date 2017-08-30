@@ -5,7 +5,7 @@
     <p>Welcome to {{title}}</p>
     <div class="container">
         <div class="jumbotron">
-            <h1>公安局后台管理系统</h1>
+            <h1>出错了!</h1>
             <p>重置窗口大小，查看响应式效果！</p>
         </div>
         <div class="row">
