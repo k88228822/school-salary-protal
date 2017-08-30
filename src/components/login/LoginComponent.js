@@ -77,7 +77,7 @@ function LoginComponent(props) {
         <Layout className={styles.layout}>
 
           <Header className={styles.header}>
-
+            <img className={styles.headerImg} src={'http://202.118.27.233/myimages/header.png'}/>
           </Header>
 
           <Content className={styles.content}>
