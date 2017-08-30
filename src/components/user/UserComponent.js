@@ -61,8 +61,7 @@ class UserComponent extends React.Component {
 
         <div ref='exportPdf' className={styles.tableContainer}>
           <text className={styles.titleText}>
-            {new Date(currentData.time).getFullYear()}年{new Date(currentData.time).getMonth() + 1}月工资明细_
-            #{window.localStorage.getItem(usernameKey)}
+            {new Date(currentData.time).getFullYear()}年{new Date(currentData.time).getMonth() + 1}月工资明细_#{window.localStorage.getItem(usernameKey)}
           </text>
           <Table
             loading={this.props.loading}
