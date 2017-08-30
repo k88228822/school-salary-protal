@@ -96,7 +96,7 @@ function LoginComponent(props) {
           </Content>
 
           <Footer className={styles.footer}>
-            <text style={{color: '#585859'}}>Copyright © 2017版权所有 东北大学人事处 All Rights Reserved 校址：辽宁省沈阳市和平区文化路三巷11号
+            <text style={{color: '#a29d9d'}}>Copyright © 2017版权所有 东北大学人事处 All Rights Reserved 校址：辽宁省沈阳市和平区文化路三巷11号
               邮编:110819
             </text>
           </Footer>
