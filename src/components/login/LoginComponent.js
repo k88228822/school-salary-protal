@@ -29,16 +29,16 @@ function LoginComponent(props) {
           autoplaySpeed={6000}
           className={styles.carousel}
         >
-          <img src={require('../../assets/bg9.jpg')}/>
-          <img src={require('../../assets/bg1.jpg')}/>
-          <img src={require('../../assets/bg10.jpg')}/>
-          <img src={require('../../assets/bg2.jpg')}/>
-          <img src={require('../../assets/bg3.jpg')}/>
           <img src={require('../../assets/bg4.jpg')}/>
+          <img src={require('../../assets/bg1.jpg')}/>
           <img src={require('../../assets/bg5.jpg')}/>
+          <img src={require('../../assets/bg3.jpg')}/>
+          {/*<img src={require('../../assets/bg10.jpg')}/>*/}
+          <img src={require('../../assets/bg2.jpg')}/>
           <img src={require('../../assets/bg6.jpg')}/>
           <img src={require('../../assets/bg7.jpg')}/>
-          <img src={require('../../assets/bg8.jpg')}/>
+          {/*<img src={require('../../assets/bg8.jpg')}/>*/}
+          <img src={require('../../assets/bg9.jpg')}/>
         </Carousel>
       </div>
     )
