@@ -22,7 +22,8 @@
   "proxy": {
     "/api": {
 //      "target": "http://115.159.211.47:8090/",
-      "target": "http://127.0.0.1:8090/",
+//      "target": "http://127.0.0.1:8090/",
+      "target": "http://202.118.27.233:8090/",
       "changeOrigin": true,
       "pathRewrite": { "^/api" : "" }
     }
