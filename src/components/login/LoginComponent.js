@@ -39,6 +39,7 @@ function LoginComponent(props) {
   }
 
   function loginForm() {
+    const {getFieldDecorator} = props.form;
     return (
       <Card title="请使用职工号登录" bordered={false} className={styles.card}>
         <Form onSubmit={handleSubmit} className="login-form">
@@ -68,7 +69,6 @@ function LoginComponent(props) {
     );
   }
 
-  const {getFieldDecorator} = props.form;
   return (
     <div className={styles.normal}>
       {renderBg()}

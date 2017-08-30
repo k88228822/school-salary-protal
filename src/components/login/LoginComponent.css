@@ -51,6 +51,7 @@
 }
 .formBtn{
   width: 250px;
+  z-index: 10;
 }
 .bgContainer{
   position: absolute;
