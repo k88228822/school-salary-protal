@@ -24,7 +24,6 @@ export default {
     name: '',
     password: '',
     rank: -1,
-    showReload:false,
   },
   reducers: {
     changeSelectKey(state, {payload}) {
@@ -110,11 +109,6 @@ export default {
         if (pathname.indexOf('/app') >= 0 && query !== undefined) {
           dispatch(createAction('changeSelectKey')({selectedKey: query.key}))
         }
-
-        pathname.startsWith('/app/login')?
-          dispatch(createAction('setShowReload')({showReload:false}))
-          :
-          dispatch(createAction('setShowReload')({showReload:true}))
 
         if (pathname.startsWith('/app/admin')) {
           window.localStorage.getItem(roleKey) === 'ROLE_ADMIN' ?
