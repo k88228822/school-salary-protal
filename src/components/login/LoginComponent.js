@@ -24,9 +24,9 @@ function LoginComponent(props) {
           dots={false}
           effect={'fade'}
           autoplay
-          speed={1300}
+          speed={2000}
           pauseOnHover={false}
-          autoplaySpeed={5000}
+          autoplaySpeed={6000}
           className={styles.carousel}
         >
           <img className={styles.imageStyle} src={'http://202.118.27.233/myimages/bg1.jpg'}/>
