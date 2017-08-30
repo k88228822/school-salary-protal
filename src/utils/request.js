@@ -8,6 +8,9 @@ function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
+  if(response.status===401){
+    throw new Error('没有权限访问');
+  }
 
   const error = new Error(response.statusText);
   error.response = response;
