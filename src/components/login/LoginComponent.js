@@ -28,9 +28,9 @@ function LoginComponent(props) {
           autoplaySpeed={5000}
           className={styles.carousel}
         >
-          <img className={styles.imageStyle} src={'http://oukxzn0vv.bkt.clouddn.com/17-8-30/9396048.jpg'}/>
-          <img className={styles.imageStyle} src={'http://oukxzn0vv.bkt.clouddn.com/17-8-30/38605632.jpg'}/>
-          <img className={styles.imageStyle} src={'http://oukxzn0vv.bkt.clouddn.com/17-8-30/53395676.jpg'}/>
+          <img className={styles.imageStyle} src={'http://202.118.27.233/myimages/bg1.jpg'}/>
+          <img className={styles.imageStyle} src={'http://202.118.27.233/myimages/bg2.jpg'}/>
+          <img className={styles.imageStyle} src={'http://202.118.27.233/myimages/bg3.jpg'}/>
         </Carousel>
       </div>
     )
