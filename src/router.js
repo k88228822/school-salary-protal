@@ -23,7 +23,7 @@ function RouterConfig({ history }) {
           <Route path="/app/admin/changePassword" component={PasswordComponent} />
         </Route>
       </Route>
-      <Route path="/login" component={Login} />
+      <Route path="/app/login" component={Login} />
     </Router>
   );
 }
