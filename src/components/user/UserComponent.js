@@ -27,10 +27,8 @@ class UserComponent extends React.Component {
 
   render() {
     let selectedNum = parseInt(this.props.monthsSelectedKeys[0]);
-    let currentData = this.props.data[selectedNum][0];
-    console.log("time"+currentData.time)
-    let time=currentData.time*1000;
-    console.log(new Date(time).toLocaleDateString())
+    let currentData = this.props.data.length===0?[]:this.props.data[selectedNum][0];
+    let time = currentData.time * 1000;
     let menu = (
       <Menu
         selectedKeys={this.props.monthsSelectedKeys}

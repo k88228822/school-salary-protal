@@ -105,7 +105,7 @@ const data=[
     subsidyCount:'',
     teacherAssistSubsidy:'',
     teacherSubsidy:'',
-    time:'',
+    time:new Date().getTime()+'',
     totalSalary:'',
     unemploymentInsurancePersonal:'',
     unemploymentInsuranceUnit:'',
