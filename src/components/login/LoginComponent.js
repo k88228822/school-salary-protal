@@ -24,6 +24,7 @@ function LoginComponent(props) {
           dots={false}
           effect={'fade'}
           autoplay
+          speed={1300}
           pauseOnHover={false}
           autoplaySpeed={5000}
           className={styles.carousel}
