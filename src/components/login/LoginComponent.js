@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './LoginComponent.css';
-import {Form, Icon, Input, Button, Checkbox, Layout, Card, Carousel} from 'antd';
+import {Form, Icon, Input, Button, Checkbox, Layout, Card, Carousel, Row, Col} from 'antd';
 import {createAction} from "../../utils/index";
 
 const {Header, Footer, Content} = Layout;
@@ -29,9 +29,16 @@ function LoginComponent(props) {
           autoplaySpeed={6000}
           className={styles.carousel}
         >
-          <img className={styles.imageStyle} src={'http://202.118.27.233/myimages/bg1.jpg'}/>
-          <img className={styles.imageStyle} src={'http://202.118.27.233/myimages/bg2.jpg'}/>
-          <img className={styles.imageStyle} src={'http://202.118.27.233/myimages/bg3.jpg'}/>
+          <img src={require('../../assets/bg9.jpg')}/>
+          <img src={require('../../assets/bg1.jpg')}/>
+          <img src={require('../../assets/bg10.jpg')}/>
+          <img src={require('../../assets/bg2.jpg')}/>
+          <img src={require('../../assets/bg3.jpg')}/>
+          <img src={require('../../assets/bg4.jpg')}/>
+          <img src={require('../../assets/bg5.jpg')}/>
+          <img src={require('../../assets/bg6.jpg')}/>
+          <img src={require('../../assets/bg7.jpg')}/>
+          <img src={require('../../assets/bg8.jpg')}/>
         </Carousel>
       </div>
     )
@@ -73,18 +80,25 @@ function LoginComponent(props) {
     <div className={styles.normal}>
       {renderBg()}
       <div className={styles.contentBg}>
-        {loginForm()}
+        <Row type="flex" justify="end" style={{width:'100%'}}>
+          <Col>
+          {loginForm()}
+          </Col>
+          <Col span={1}>{''}</Col>
+        </Row>
         <Layout className={styles.layout}>
 
           <Header className={styles.header}>
-            <img className={styles.headerImg} src={'http://202.118.27.233/myimages/header.png'}/>
+            <img className={styles.headerImg} src={require('../../assets/header.png')}/>
           </Header>
 
           <Content className={styles.content}>
           </Content>
 
           <Footer className={styles.footer}>
-            <text style={{color:'#585859'}}>Copyright © 2017版权所有 东北大学人事处 All Rights Reserved 校址：辽宁省沈阳市和平区文化路三巷11号 邮编:110819</text>
+            <text style={{color: '#585859'}}>Copyright © 2017版权所有 东北大学人事处 All Rights Reserved 校址：辽宁省沈阳市和平区文化路三巷11号
+              邮编:110819
+            </text>
           </Footer>
 
         </Layout>

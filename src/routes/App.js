@@ -4,6 +4,7 @@ import styles from './App.css';
 import {Col, Layout, Menu, Row} from 'antd';
 import {routerRedux} from 'dva/router';
 import {createAction} from "../utils/index";
+import {usernameKey} from "../components/common/Constants";
 
 class AppComponent extends React.Component {
 
@@ -39,16 +40,18 @@ class AppComponent extends React.Component {
     return (
       <div className={styles.normal}>
         <Layout className={styles.container}>
+          <div style={{backgroundColor:'#1f4894',width:'100%',display:'flex',justifyContent:'center'}}>
           <div className={styles.top}>
-            <Row type="flex">
+            <Row type="flex" >
               <Col style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}} span={12}>
-                <text className={styles.leftText}>东北大学</text>
+                {/*<text className={styles.leftText}>当前工号：#{window.localStorage.getItem(usernameKey)}</text>*/}
+                <text className={styles.leftText}>教职工工资查询系统</text>
               </Col>
               <Col span={12}>
                 <div className={styles.rightContainer}>
                   <Menu
                     mode="horizontal"
-                    style={{borderBottomWidth: 0}}
+                    style={{borderBottomWidth: 0,backgroundColor:'#1f4894'}}
                     selectedKeys={this.props.selectedKeys}
                     onClick={this.onItemClick}
                   >
@@ -72,6 +75,7 @@ class AppComponent extends React.Component {
                 </div>
               </Col>
             </Row>
+          </div>
           </div>
 
           <div className={styles.contentContainer}>

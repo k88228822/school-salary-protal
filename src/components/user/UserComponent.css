@@ -6,12 +6,28 @@
   flex-direction: column;
   width: 100%;
 }
+.tableContainer{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  max-width: 950px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.normal td{
+  font-size: 13px;
+  font-weight: 900;
+}
 .selectContainer{
   display: flex;
   flex-direction: row;
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  z-index: 10;
 }
 
 .tableContainer{
@@ -48,5 +64,7 @@
   letter-spacing:2px;
   font-weight: 600;
   align-self: center;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
