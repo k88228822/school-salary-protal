@@ -1,6 +1,6 @@
 {{extend('./layout')}}
 {{#block('content')}}
 <div class="body-implement">
-    <h1>错误页面</h1>
+    <h3>没有权限访问该页面</h3>
 </div>
 {{/block}}
