@@ -4,6 +4,8 @@ import * as appService from "../services/app";
 import {userIdKey, usernameKey} from "../components/common/Constants";
 
 const column1=[
+  { title:'工号',dataIndex:'usercode',key:'usercode'},
+  { title:'姓名',dataIndex:'username',key:'username'},
   { title:'岗位薪资',dataIndex:'jobSalary',key:'jobSalary'},
   { title:'薪级工资',dataIndex:'wagePay',key:'wagePay'},
   { title:'补贴款',dataIndex:'subsidy',key:'subsidy'},
@@ -12,10 +14,10 @@ const column1=[
   { title:'管理津贴',dataIndex:'managerSubsidy',key:'managerSubsidy'},
   { title:'责任津贴',dataIndex:'responsibilitySubsidy',key:'responsibilitySubsidy'},
   { title:'教师津贴',dataIndex:'teacherSubsidy',key:'teacherSubsidy'},
-  { title:'教辅津贴',dataIndex:'teacherAssistSubsidy',key:'teacherAssistSubsidy'},
-  { title:'绩效津贴',dataIndex:'achievementSubsidy',key:'achievementSubsidy'},
 ]
 const column2=[
+  { title:'教辅津贴',dataIndex:'teacherAssistSubsidy',key:'teacherAssistSubsidy'},
+  { title:'绩效津贴',dataIndex:'achievementSubsidy',key:'achievementSubsidy'},
   { title:'岗贴增量',dataIndex:'subsidyAdd',key:'subsidyAdd'},
   { title:'特殊津贴',dataIndex:'specialSubsidy',key:'specialSubsidy'},
   { title:'工资额',dataIndex:'salaryCount',key:'salaryCount'},
@@ -29,6 +31,9 @@ const column2=[
       {title:'个人8%',dataIndex:'pensionPersonal',key:'pensionPersonal'},
     ]
   },
+
+]
+const column3=[
   {
     title:'失业保险',dataIndex:'unemploymentInsurance',key:'unemploymentInsurance',
     children:[
@@ -36,9 +41,6 @@ const column2=[
       {title:'个人0.5%',dataIndex:'unemploymentInsurancePersonal',key:'unemploymentInsurancePersonal'},
     ]
   },
-
-]
-const column3=[
   {
     title:'工伤保险',dataIndex:'injuryWorkUnsurance',key:'injuryWorkUnsurance',
     children:[
@@ -67,6 +69,9 @@ const column3=[
     ]
   },
   {title:'新住房公积金基数',dataIndex:'housePayBase',key:'housePayBase'},
+
+]
+const column4=[
   {
     title:'新住房公积金',dataIndex:'housePay',key:'housePay',
     children:[
@@ -74,6 +79,33 @@ const column3=[
       {title:'个人12%',dataIndex:'housePayPersonal',key:'housePayPersonal'},
     ]
   },
+  {title:'公积金单位补缴额',dataIndex:'fundUnit',key:'fundUnit'},
+  {title:'公积金个人补缴额',dataIndex:'fundPersonal',key:'fundPersonal'},
+  {
+    title:'单位缴纳',
+    children:[
+      {title:'小计',dataIndex:'unitPayTotal',key:'unitPayTotal'},
+    ]
+  },
+  {
+    title:'个人缴纳',
+    children:[
+      {title:'小计',dataIndex:'personalPayTotal',key:'personalPayTotal'},
+    ]
+  },
+  {
+    title:'五险一金',
+    children:[
+      {title:'合计',dataIndex:'fiveOneTotal',key:'fiveOneTotal'},
+    ]
+  },
+  {title:'应发工资',dataIndex:'shouldPay',key:'shouldPay'},
+  {title:'个税',dataIndex:'personalTax',key:'personalTax'},
+  {title:'实发工资',dataIndex:'factPay',key:'factPay'},
+  {title:'服务费',dataIndex:'serviceTax',key:'serviceTax'},
+  {title:'单位付款总计',dataIndex:'unitFinalPay',key:'unitFinalPay'},
+
+
 ]
 const data=[
   [{
@@ -120,6 +152,7 @@ export default {
     column1,
     column2,
     column3,
+    column4,
     monthsSelectedKeys:['0'],
     printPadding:0,
   },
@@ -145,14 +178,13 @@ export default {
   },
   effects: {
     *getData({payload},{call,put}){
-      let data=yield call(appService.getSalaryData,{username:window.localStorage.getItem(usernameKey)})
+      let data=yield call(appService.getSalaryData,{usercode:window.localStorage.getItem(usernameKey)})
       let temp=[];
       data.map((item,index)=>{
         item.key=index;
         temp.push([item]);
       })
       yield put(createAction('setData')({data:temp}))
-
     }
 
   },

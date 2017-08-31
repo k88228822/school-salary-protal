@@ -26,6 +26,7 @@
 .normal td{
   font-size: 13px;
   font-weight: 900;
+  background-color: white;
 }
 .selectContainer{
   display: flex;

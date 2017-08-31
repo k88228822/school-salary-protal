@@ -87,6 +87,13 @@ class UserComponent extends React.Component {
             pagination={false}
             dataSource={this.props.data[selectedNum]} bordered
           />
+          <Table
+            loading={this.props.loading}
+            style={{width: '100%', marginTop: 10, marginBottom: 20}}
+            columns={this.props.column4}
+            pagination={false}
+            dataSource={this.props.data[selectedNum]} bordered
+          />
         </div>
       </div>
       </div>
