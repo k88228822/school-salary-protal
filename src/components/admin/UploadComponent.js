@@ -4,50 +4,51 @@ import {Upload, Icon,notification} from 'antd';
 import {baseUrl, storageTokenKey} from "../common/Constants";
 const Dragger = Upload.Dragger;
 
-let theprops = {
-  name: 'file',
-  multiple: true,
-  showUploadList: false,
-  action: baseUrl+'/file/postFile',
-  headers:{
-    'Authorization':`Bearer ${window.localStorage.getItem(storageTokenKey)}`,
-    mode: 'cors',
-  },
-  data:{
-  },
-  onChange(info) {
-    const status = info.file.status;
-    if (status !== 'uploading'){
-      // console.log(info.file, info.fileList);
-    }
-    if (status === 'done') {
-      if(info.file.response.successful) {
-        notification['success']({
-          message: `${info.file.name} 上传成功`,
-          description: '',
-          duration: 10,
-          style: {height: 80, paddingBottom: 10},
-        });
-      }else{
+
+function UploadComponent(props) {
+
+  let theprops = {
+    name: 'file',
+    multiple: true,
+    showUploadList: false,
+    action: baseUrl+'/file/postFile',
+    headers:{
+      'Authorization':`Bearer ${window.localStorage.getItem(storageTokenKey)}`,
+      mode: 'cors',
+    },
+    data:{
+    },
+    onChange(info) {
+      const status = info.file.status;
+      if (status !== 'uploading'){
+        // console.log(info.file, info.fileList);
+      }
+      if (status === 'done') {
+        if(info.file.response.successful) {
+          notification['success']({
+            message: `${info.file.name} 上传成功`,
+            description: '',
+            duration: 10,
+            style: {height: 80, paddingBottom: 10},
+          });
+        }else{
+          notification['error']({
+            message: `${info.file.response.object.message}`,
+            description: ``,
+            duration: 6,
+            style:{height:80,paddingBottom:10},
+          });
+        }
+      } else if (status === 'error') {
         notification['error']({
-          message: `${info.file.response.object.message}`,
+          message: `fileName:${info.file.name} 上传失败`,
           description: ``,
           duration: 6,
           style:{height:80,paddingBottom:10},
         });
       }
-    } else if (status === 'error') {
-      notification['error']({
-        message: `fileName:${info.file.name} 上传失败`,
-        description: ``,
-        duration: 6,
-        style:{height:80,paddingBottom:10},
-      });
-    }
-  },
-};
-
-function UploadComponent(props) {
+    },
+  };
 
   const openNotification = (file) => {
   };
