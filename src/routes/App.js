@@ -45,7 +45,7 @@ class AppComponent extends React.Component {
               <Row type="flex">
                 <Col style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}} span={12}>
                   {/*<text className={styles.leftText}>当前工号：#{window.localStorage.getItem(usernameKey)}</text>*/}
-                  <text className={styles.leftText}>教职工工资查询系统</text>
+                  <text className={styles.leftText}>工资查询系统(人才派遣职工)</text>
                 </Col>
                 <Col span={12}>
                   <div className={styles.rightContainer}>
