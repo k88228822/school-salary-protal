@@ -55,8 +55,8 @@ function UploadComponent(props) {
 
   return (
     <div className={styles.normal}>
-      <div style={{ marginTop: 100, height: 180 }}>
-        <Dragger {...theprops}>
+      <div style={{ marginTop: 100, height: 240 ,backgroundColor:'white'}}>
+        <Dragger  {...theprops}>
           <p className="ant-upload-drag-icon">
             <Icon type="inbox" />
           </p>
