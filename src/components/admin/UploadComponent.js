@@ -10,7 +10,7 @@ function UploadComponent(props) {
   let theprops = {
     name: 'file',
     multiple: true,
-    showUploadList: false,
+    showUploadList: true,
     action: baseUrl+'/file/postFile',
     headers:{
       'Authorization':`Bearer ${window.localStorage.getItem(storageTokenKey)}`,
