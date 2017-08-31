@@ -121,6 +121,7 @@ export default {
     column2,
     column3,
     monthsSelectedKeys:['0'],
+    printPadding:0,
   },
   reducers: {
     setData(state,{payload}){
@@ -134,6 +135,12 @@ export default {
       ...state,
       monthsSelectedKeys:[payload.selectedKey],
     }
+    },
+    setPadding(state,{payload}){
+     return{
+       ...state,
+       printPadding:payload.printPadding,
+     }
     }
   },
   effects: {
