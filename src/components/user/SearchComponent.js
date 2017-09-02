@@ -37,7 +37,7 @@ function SearchComponent(props) {
     <div className={styles.normal}>
       <Form className={styles.selectContainer} layout={'inline'} onSubmit={handleSubmit}>
         <Form.Item>
-          <text>从</text>
+          <text className={styles.selectText}>从</text>
         </Form.Item>
         <Form.Item>
           {getFieldDecorator('firstDate', {
@@ -47,7 +47,7 @@ function SearchComponent(props) {
           )}
         </Form.Item>
         <Form.Item>
-          <text> 到</text>
+          <text className={styles.selectText}> 到</text>
         </Form.Item>
         <Form.Item>
           {getFieldDecorator('lastDate', {

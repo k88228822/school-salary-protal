@@ -17,27 +17,28 @@ const items=[
   {title:'11月',dataIndex:'c11',key:'c11'},
   {title:'12月',dataIndex:'c12',key:'c12'},
 ]
+const defaultColumn=[
+  {width:150,title:'工资项',dataIndex:'title',key:'title'},
+  {title:'1月',dataIndex:'c1',key:'c1'},
+  {title:'2月',dataIndex:'c2',key:'c2'},
+  {title:'3月',dataIndex:'c3',key:'c3'},
+  {title:'4月',dataIndex:'c4',key:'c4'},
+  {title:'5月',dataIndex:'c5',key:'c5'},
+  {title:'6月',dataIndex:'c6',key:'c6'},
+  {title:'7月',dataIndex:'c7',key:'c7'},
+  {title:'8月',dataIndex:'c8',key:'c8'},
+  {title:'9月',dataIndex:'c9',key:'c9'},
+  {title:'10月',dataIndex:'c10',key:'c10'},
+  {title:'11月',dataIndex:'c11',key:'c11'},
+  {title:'12月',dataIndex:'c12',key:'c12'},
+  {title:'总计',dataIndex:'total',key:'total'},
+]
 export default {
   namespace: 'search',
   state: {
     fullYearData:[],
     data:[],
-    column:[
-      {width:150,title:'工资项',dataIndex:'title',key:'title'},
-      {title:'1月',dataIndex:'c1',key:'c1'},
-      {title:'2月',dataIndex:'c2',key:'c2'},
-      {title:'3月',dataIndex:'c3',key:'c3'},
-      {title:'4月',dataIndex:'c4',key:'c4'},
-      {title:'5月',dataIndex:'c5',key:'c5'},
-      {title:'6月',dataIndex:'c6',key:'c6'},
-      {title:'7月',dataIndex:'c7',key:'c7'},
-      {title:'8月',dataIndex:'c8',key:'c8'},
-      {title:'9月',dataIndex:'c9',key:'c9'},
-      {title:'10月',dataIndex:'c10',key:'c10'},
-      {title:'11月',dataIndex:'c11',key:'c11'},
-      {title:'12月',dataIndex:'c12',key:'c12'},
-      {title:'总计',dataIndex:'total',key:'total'},
-    ],
+    column:defaultColumn
   },
   reducers: {
     changeColumn(state,{payload}){
@@ -96,6 +97,7 @@ export default {
       return history.listen(({pathname, query}) => {
           if(pathname.startsWith('/app/user/salarySearch')){
             dispatch(createAction('getData')())
+            dispatch(createAction('changeColumn')({column:defaultColumn}))
           }
       })
     }
