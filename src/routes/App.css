@@ -50,6 +50,7 @@
   margin-right: 5px;
   flex-direction: column;
   align-items: center;
-  background-image: url("../assets/mainBg.jpg");
+  /*background-image: url("../assets/mainBg.jpg");*/
+  background-color: #E1E5F1;
 }
 

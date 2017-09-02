@@ -7,6 +7,7 @@ import UploadComponent from "./components/admin/UploadComponent";
 import Login from "./routes/Login.js";
 import PasswordComponent from "./components/password/PasswordComponent";
 import UserComponent from "./components/user/UserComponent";
+import SearchComponent from "./components/user/SearchComponent";
 
 
 function RouterConfig({ history }) {
@@ -16,6 +17,7 @@ function RouterConfig({ history }) {
         <Route path="/app/user" >
           <IndexRoute component={User}/>
           <Route path="/app/user/changePassword" component={PasswordComponent} />
+          <Route path="/app/user/salarySearch" component={SearchComponent} />
         </Route>
         <Route path="/app/admin">
           <IndexRoute component={UploadComponent}/>

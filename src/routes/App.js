@@ -28,6 +28,9 @@ class AppComponent extends React.Component {
           '/app/admin/changePassword' : '/app/user/changePassword'
         this.props.dispatch(routerRedux.push({pathname, query: {key: data.key}}))
         break;
+      case '3':
+        this.props.dispatch(routerRedux.push({pathname: '/app/user/salarySearch', query: {key: data.key}}));
+        break;
       case 'reload':
         console.log('dianji')
         this.props.dispatch(createAction('app/reload')())

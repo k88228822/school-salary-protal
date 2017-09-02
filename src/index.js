@@ -4,6 +4,9 @@ import { browserHistory} from 'dva/router';
 import { createLogger } from 'redux-logger';
 import {notification} from 'antd';
 import createLoading from 'dva-loading';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+moment.locale('zh-cn');
 
 // 1. Initialize
 const app = dva({
@@ -20,6 +23,8 @@ const app = dva({
 });
 
 app.model(require("./models/user"));
+
+app.model(require("./models/search"));
 
 app.model(require("./models/app"));
 

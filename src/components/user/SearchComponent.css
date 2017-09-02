@@ -1,0 +1,21 @@
+
+.normal {
+  width: 100%;
+  max-width: 920px;
+}
+.selectContainer{
+  margin-top: 60px;
+  width:460px ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.normal td{
+ background-color: white;
+  font-size: 13px;
+  font-weight: 900;
+}
+.normal table{
+  padding: 0!important;
+}

@@ -35,7 +35,8 @@
     "safe-eval": "^0.3.0",
     "serve-favicon": "^2.4.3",
     "xtemplate": "^4.7.2",
-    "xtpl": "^3.3.0"
+    "xtpl": "^3.3.0",
+    "moment": "latest"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",

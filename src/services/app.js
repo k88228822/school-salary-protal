@@ -16,3 +16,7 @@ export function changePassword(params) {
 export function getSalaryData(params) {
   return Net.GET(baseUrl+'/getSalaryDates',{...params})
 }
+
+export function getSalaryByYear(params){
+  return Net.GET(baseUrl+'/getSalaryByYear',{...params})
+}

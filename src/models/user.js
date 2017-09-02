@@ -104,8 +104,6 @@ const column4=[
   {title:'实发工资',dataIndex:'factPay',key:'factPay'},
   {title:'服务费',dataIndex:'serviceTax',key:'serviceTax'},
   {title:'单位付款总计',dataIndex:'unitFinalPay',key:'unitFinalPay'},
-
-
 ]
 const data=[
   [{
@@ -148,7 +146,7 @@ const data=[
 export default {
   namespace: 'user',
   state: {
-    data:data,
+    data:[],
     column1,
     column2,
     column3,
