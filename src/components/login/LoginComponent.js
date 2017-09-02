@@ -61,7 +61,7 @@ function LoginComponent(props) {
             )}
           </FormItem>
           <FormItem>
-            <Button className={styles.formBtn} type="primary" htmlType="submit">
+            <Button className={styles.formBtn} type="primary" loading={props.loading} htmlType="submit">
               登录
             </Button>
           </FormItem>
