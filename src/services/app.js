@@ -3,7 +3,7 @@
  */
 
 import * as Net from "../utils/net";
-import {baseUrl} from "../components/common/Constants";
+import {baseUrl} from "../common/Constants";
 
 export function login(params) {
   return Net.POST(baseUrl+'/login',{...params},false)

@@ -1,7 +1,7 @@
 
 import {createAction} from "../utils/index";
 import * as appService from "../services/app";
-import {userIdKey, usernameKey} from "../components/common/Constants";
+import {userIdKey, usernameKey} from "../common/Constants";
 
 const column1=[
   { title:'工号',dataIndex:'usercode',key:'usercode'},
@@ -175,12 +175,12 @@ export default {
     }
   },
   effects: {
-    *getData({payload},{call,put}){
+    *getData({pbylobd},{call,put}){
       let data=yield call(appService.getSalaryData,{usercode:window.localStorage.getItem(usernameKey)})
       let temp=[];
       data.map((item,index)=>{
         item.key=index;
-        temp.push([item]);
+        temp.push([item])
       })
       yield put(createAction('setData')({data:temp}))
     }

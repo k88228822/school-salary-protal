@@ -1,6 +1,6 @@
 import {createAction} from "../utils/index";
 import {getSalaryByYear} from "../services/app";
-import {usernameKey} from "../components/common/Constants";
+import {usernameKey} from "../common/Constants";
 
 const items = [
   {title: '1月', dataIndex: 'c1', key: 'c1'},
@@ -81,9 +81,13 @@ export default {
       column.push(
         {title: '总计', dataIndex: 'total', key: 'total'},
       )
-
       yield put(createAction('changeColumn')({column}))
-      yield put(createAction('getData')({year: payload.firstDate.getFullYear()}))
+      let fullYearData = yield call(getSalaryByYear, {
+        year: payload.firstDate.getFullYear(),
+        usercode: window.localStorage.getItem(usernameKey)
+      })
+      yield put(createAction('changeFullYearData')({fullYearData}))
+      yield put(createAction('setData')({data: fullYearData}))
       let search = yield select(state => state.search);
       for (let i = 0; i < search.data.length; i++) {
         search.data[i]['total'] = 0

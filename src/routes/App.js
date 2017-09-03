@@ -4,7 +4,7 @@ import styles from './App.css';
 import {Col, Layout, Menu, Row} from 'antd';
 import {routerRedux} from 'dva/router';
 import {createAction} from "../utils/index";
-import {usernameKey} from "../components/common/Constants";
+import {usernameKey} from "../common/Constants";
 
 class AppComponent extends React.Component {
 

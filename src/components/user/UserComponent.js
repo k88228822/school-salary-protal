@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './UserComponent.css';
 import {Table, Card, Form, Icon, Button, Dropdown, Menu} from "antd";
 import {createAction} from "../../utils/index";
-import {usernameKey} from "../common/Constants";
+import {usernameKey} from "../../common/Constants";
 
 const {Column, ColumnGroup} = Table;
 

@@ -5,7 +5,7 @@ import request from '../utils/request';
 import qs ,{ parse } from 'qs';
 import FormDataWrapper from 'object-to-formdata';
 import merge from 'merge-object';
-import {storageTokenKey} from "../components/common/Constants";
+import {storageTokenKey} from "../common/Constants";
 
 async function POST(url,params,isToken,isJson){
   let token=window.localStorage.getItem(storageTokenKey)

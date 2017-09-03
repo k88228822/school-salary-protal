@@ -2,9 +2,9 @@ import {createAction} from "../utils/index";
 import {routerRedux} from 'dva/router'
 import {notification} from 'antd'
 import * as appService from "../services/app";
-import {roleKey, usernameKey} from "../components/common/Constants";
-import {userIdKey} from "../components/common/Constants";
-import {storageTokenKey} from "../components/common/Constants";
+import {roleKey, usernameKey} from "../common/Constants";
+import {userIdKey} from "../common/Constants";
+import {storageTokenKey} from "../common/Constants";
 
 const userTitle = [
   {key: '1', title: '明细', url: ''},

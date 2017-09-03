@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './UploadComponent.css';
 import {Upload, Icon,notification} from 'antd';
-import {baseUrl, storageTokenKey} from "../common/Constants";
+import {baseUrl, storageTokenKey} from "../../common/Constants";
 const Dragger = Upload.Dragger;
 
 
