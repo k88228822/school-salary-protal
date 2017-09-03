@@ -32,7 +32,6 @@ class AppComponent extends React.Component {
         this.props.dispatch(routerRedux.push({pathname: '/app/user/salarySearch', query: {key: data.key}}));
         break;
       case 'reload':
-        console.log('dianji')
         this.props.dispatch(createAction('app/reload')())
         break;
 
