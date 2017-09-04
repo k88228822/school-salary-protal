@@ -37,7 +37,8 @@ export default {
   state: {
     fullYearData: [],
     data: [],
-    column: defaultColumn
+    column: defaultColumn,
+    selectYear: new Date().getFullYear(),
   },
   reducers: {
     changeColumn(state, {payload}) {
@@ -56,6 +57,12 @@ export default {
       return {
         ...state,
         data: payload.data
+      }
+    },
+    setSelectYear(state, {payload}) {
+      return {
+        ...state,
+        selectYear: payload.selectYear
       }
     }
 
@@ -82,13 +89,14 @@ export default {
         {title: '总计', dataIndex: 'total', key: 'total'},
       )
       yield put(createAction('changeColumn')({column}))
-      let fullYearData = yield call(getSalaryByYear, {
-        year: payload.firstDate.getFullYear(),
-        usercode: window.localStorage.getItem(usernameKey)
-      })
-      yield put(createAction('changeFullYearData')({fullYearData}))
-      yield put(createAction('setData')({data: fullYearData}))
+
       let search = yield select(state => state.search);
+      if (search.selectYear !== payload.firstDate.getFullYear()) {
+        yield put(createAction('getData')({year:payload.firstDate.getFullYear()}))
+        yield put(createAction('setSelectYear')({selectYear:payload.firstDate.getFullYear()}))
+      }
+
+      search = yield select(state => state.search);
       for (let i = 0; i < search.data.length; i++) {
         search.data[i]['total'] = 0
         for (let j = firstDate + 1; j <= lastDate + 1; j++) {

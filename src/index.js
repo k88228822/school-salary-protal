@@ -19,7 +19,7 @@ const app = dva({
     });
   },
   history: browserHistory,
-  // onAction: createLogger(),
+  onAction: createLogger(),
 });
 
 app.model(require("./models/user"));
