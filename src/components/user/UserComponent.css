@@ -23,13 +23,13 @@
   padding-left: 15px;
   padding-right: 15px;
 }
-.normal td{
+.tableContainer td{
   font-size: 13px;
   font-weight: 900;
   background-color: white;
   text-align: center!important;
 }
-.normal th{
+.tableContainer th{
   text-align: center!important;
 }
 .selectContainer{
