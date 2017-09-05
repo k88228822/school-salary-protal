@@ -8,6 +8,7 @@ import Login from "./routes/Login.js";
 import PasswordComponent from "./components/password/PasswordComponent";
 import UserComponent from "./components/user/UserComponent";
 import SearchComponent from "./components/user/SearchComponent";
+import TempComponent from "./components/temp/TempComponent";
 
 
 function RouterConfig({ history }) {
@@ -26,6 +27,7 @@ function RouterConfig({ history }) {
         </Route>
       </Route>
       <Route path="/app/login" component={Login} />
+      <Route path="/app/temp" component={TempComponent} />
     </Router>
   );
 }
