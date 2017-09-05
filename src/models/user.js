@@ -6,7 +6,7 @@ import {userIdKey, usernameKey} from "../common/Constants";
 const column1=[
   { title:'工号',dataIndex:'usercode',key:'usercode'},
   { title:'姓名',dataIndex:'username',key:'username'},
-  { title:'岗位薪资',dataIndex:'jobSalary',key:'jobSalary'},
+  { title:'岗位工资',dataIndex:'jobSalary',key:'jobSalary'},
   { title:'薪级工资',dataIndex:'wagePay',key:'wagePay'},
   { title:'补贴款',dataIndex:'subsidy',key:'subsidy'},
   { title:'岗贴二',dataIndex:'jobSubsidy',key:'jobSubsidy'},

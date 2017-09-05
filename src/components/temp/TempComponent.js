@@ -5,6 +5,9 @@ import {Button} from "antd";
 function TempComponent() {
   return (
     <div className={styles.normal}>
+      <div className={styles.imageContainer}>
+        <img  className={styles.image} src={require('../../assets/first_bg.jpg')}/>
+      </div>
       <Button onClick={()=>{
         window.open('http://jcc.neu.edu.cn/northEastUcw/index.jsp')
       }} className={styles.button} type={"primary"}>全民职工工资查询</Button>

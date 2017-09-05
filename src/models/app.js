@@ -7,8 +7,8 @@ import {userIdKey} from "../common/Constants";
 import {storageTokenKey} from "../common/Constants";
 
 const userTitle = [
-  {key: '1', title: '明细', url: ''},
-  {key: '3', title: '查询', url: ''},
+  {key: '1', title: '明细查询', url: ''},
+  {key: '3', title: '汇总查询', url: ''},
   {key: '2', title: '修改密码', url: ''},
 ]
 
