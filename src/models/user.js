@@ -13,9 +13,9 @@ const column1=[
   { title:'房补',dataIndex:'houseSubsidy',key:'houseSubsidy'},
   { title:'管理津贴',dataIndex:'managerSubsidy',key:'managerSubsidy'},
   { title:'责任津贴',dataIndex:'responsibilitySubsidy',key:'responsibilitySubsidy'},
-  { title:'教师津贴',dataIndex:'teacherSubsidy',key:'teacherSubsidy'},
 ]
 const column2=[
+  { title:'教师津贴',dataIndex:'teacherSubsidy',key:'teacherSubsidy'},
   { title:'教辅津贴',dataIndex:'teacherAssistSubsidy',key:'teacherAssistSubsidy'},
   { title:'绩效津贴',dataIndex:'achievementSubsidy',key:'achievementSubsidy'},
   { title:'岗贴增量',dataIndex:'subsidyAdd',key:'subsidyAdd'},
@@ -23,7 +23,9 @@ const column2=[
   { title:'工资额',dataIndex:'salaryCount',key:'salaryCount'},
   { title:'津贴额',dataIndex:'subsidyCount',key:'subsidyCount'},
   { title:'工资合计',dataIndex:'totalSalary',key:'totalSalary'},
-  { title:'养老缴费基数实际',dataIndex:'pensionBase',key:'pensionBase'},
+]
+const column3=[
+  // { title:'养老缴费基数实际',dataIndex:'pensionBase',key:'pensionBase'},
   {
     title:'养老保险',dataIndex:'pension',key:'pension',
     children:[
@@ -31,9 +33,6 @@ const column2=[
       {title:'个人8%',dataIndex:'pensionPersonal',key:'pensionPersonal'},
     ]
   },
-
-]
-const column3=[
   {
     title:'失业保险',dataIndex:'unemploymentInsurance',key:'unemploymentInsurance',
     children:[
@@ -47,7 +46,7 @@ const column3=[
       {title:'单位0.7%',dataIndex:'injuryWorkUnsuranceUnit',key:'injuryWorkUnsuranceUnit'},
     ]
   },
-  {title:'医疗缴费基数',dataIndex:'medicalPayBase',key:'medicalPayBase'},
+  // {title:'医疗缴费基数',dataIndex:'medicalPayBase',key:'medicalPayBase'},
   {
     title:'医疗保险',dataIndex:'medicalInsurance',key:'medicalInsurance',
     children:[
@@ -55,23 +54,23 @@ const column3=[
       {title:'个人2%',dataIndex:'medicalInsurancePersonal',key:'medicalInsurancePersonal'},
     ]
   },
+
+]
+const column4=[
   {
     title:'生育保险',dataIndex:'bearInsuranceTitle',key:'bearInsuranceTitle',
     children:[
       {title:'单位0.6%',dataIndex:'bearInsurance',key:'bearInsurance'},
     ]
   },
-  {
-    title:'大额医疗',dataIndex:'decimalMedical',key:'decimalMedical',
-    children:[
-      {title:'单位/年',dataIndex:'decimalMedicalUnit',key:'decimalMedicalUnit'},
-      {title:'个人/年',dataIndex:'decimalMedicalPersonal',key:'decimalMedicalPersonal'},
-    ]
-  },
-  {title:'新住房公积金基数',dataIndex:'housePayBase',key:'housePayBase'},
-
-]
-const column4=[
+  // {
+  //   title:'大额医疗',dataIndex:'decimalMedical',key:'decimalMedical',
+  //   children:[
+  //     {title:'单位/年',dataIndex:'decimalMedicalUnit',key:'decimalMedicalUnit'},
+  //     {title:'个人/年',dataIndex:'decimalMedicalPersonal',key:'decimalMedicalPersonal'},
+  //   ]
+  // },
+  // {title:'新住房公积金基数',dataIndex:'housePayBase',key:'housePayBase'},
   {
     title:'新住房公积金',dataIndex:'housePay',key:'housePay',
     children:[
@@ -81,25 +80,25 @@ const column4=[
   },
   {title:'公积金单位补缴额',dataIndex:'fundUnit',key:'fundUnit'},
   {title:'公积金个人补缴额',dataIndex:'fundPersonal',key:'fundPersonal'},
-  {
-    title:'单位缴纳',
-    children:[
-      {title:'小计',dataIndex:'unitPayTotal',key:'unitPayTotal'},
-    ]
-  },
-  {
-    title:'个人缴纳',
-    children:[
-      {title:'小计',dataIndex:'personalPayTotal',key:'personalPayTotal'},
-    ]
-  },
-  {
-    title:'五险一金',
-    children:[
-      {title:'合计',dataIndex:'fiveOneTotal',key:'fiveOneTotal'},
-    ]
-  },
-  {title:'应发工资',dataIndex:'shouldPay',key:'shouldPay'},
+  // {
+  //   title:'单位缴纳',
+  //   children:[
+  //     {title:'小计',dataIndex:'unitPayTotal',key:'unitPayTotal'},
+  //   ]
+  // },
+  // {
+  //   title:'个人缴纳',
+  //   children:[
+  //     {title:'小计',dataIndex:'personalPayTotal',key:'personalPayTotal'},
+  //   ]
+  // },
+  // {
+  //   title:'五险一金',
+  //   children:[
+  //     {title:'合计',dataIndex:'fiveOneTotal',key:'fiveOneTotal'},
+  //   ]
+  // },
+  // {title:'应发工资',dataIndex:'shouldPay',key:'shouldPay'},
   {title:'个税',dataIndex:'personalTax',key:'personalTax'},
   {title:'实发工资',dataIndex:'factPay',key:'factPay'},
   {title:'服务费',dataIndex:'serviceTax',key:'serviceTax'},
