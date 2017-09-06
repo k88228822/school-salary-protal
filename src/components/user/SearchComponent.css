@@ -15,6 +15,10 @@
  background-color: white;
   font-size: 13px;
   font-weight: 900;
+  text-align: center;
+}
+.normal th{
+  text-align: center !important;
 }
 .normal table{
   padding: 0!important;
