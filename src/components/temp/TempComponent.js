@@ -12,7 +12,8 @@ function TempComponent() {
         <Button  size={"small"}onClick={()=>{
           window.open('http://jcc.neu.edu.cn/northEastUcw/index.jsp')
         }} className={styles.button} type={"primary"}>
-          <span className={styles.textSpan}>全民职工工资查询</span>
+          {/*<span className={styles.textSpan}>全民职工工资查询</span>*/}
+          全民职工工资查询
         </Button>
 
         <Button size={"small"} onClick={()=>{
@@ -21,7 +22,8 @@ function TempComponent() {
             'http://202.118.27.233:3000/app/login'
           window.open(url)
         }} className={styles.button} type={"primary"}>
-          <span className={styles.textSpan}>人才派遣职工工资查询</span>
+          {/*<span className={styles.textSpan}>人才派遣职工工资查询</span>*/}
+          人才派遣职工工资查询
         </Button>
 
       </div>

@@ -1,18 +1,20 @@
 
 .normal {
   display: flex;
-  flex-direction: column;
+  position: absolute;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  position: absolute;
+  left: 0;
+  top:0;
 }
 .button{
   margin-bottom: 30px;
   width: 150px;
   height: 35px;
   background-color: #0089D1;
+  font-weight: 400;
 }
 .textSpan{
   font-size: 10px !important;
@@ -20,6 +22,8 @@
 }
 .imageContainer{
   position: absolute;
+  left: 0;
+  top:0;
   width: 100%;
   height: 100%;
 }
@@ -30,8 +34,8 @@
 .selectContainer{
   background-image: url("../../assets/select_bg.png");
   background-size: cover;
-  width: 300px;
-  height:300px;
+  width: 360px;
+  height:360px;
   display: flex;
   flex-direction: column;
   align-items: center;
