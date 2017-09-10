@@ -20,15 +20,15 @@ class UserComponent extends React.Component {
   }
 
   onPrintOnclick() {
-    let exportPdf = $(this.refs.exportPdf)
-    $(document).find('body').html(exportPdf)
+    let exportPdf1 = $(this.refs.exportPdf1)
+    $(document).find('body').html(exportPdf1)
     window.print()
     window.location.reload()
   }
 
   render() {
     let selectedNum = parseInt(this.props.monthsSelectedKeys[0]);
-    let currentData = this.props.data.length===0?[]:this.props.data[selectedNum][0];
+    let currentData = this.props.data.length === 0 ? [] : this.props.data[selectedNum][0];
     let time = currentData.time * 1000;
     let menu = (
       <Menu
@@ -59,42 +59,63 @@ class UserComponent extends React.Component {
           <Button type="primary" style={{marginLeft: 10}} onClick={this.onPrintOnclick}>打印</Button>
         </div>
 
-        <div ref='exportPdf' className={styles.printWrapper}>
-        <div className={styles.tableContainer}>
-          <text className={styles.titleText}>
-            {new Date(currentData.time).getFullYear()}年{new Date(currentData.time).getMonth() + 1}月人才派遣职工工资明细
-          </text>
-          <Table
-            loading={this.props.loading}
-            style={{width: '100%', marginTop: 10}}
-            columns={this.props.column1}
-            pagination={false}
-            dataSource={this.props.data[selectedNum]} bordered
-          />
-          <Table
-            loading={this.props.loading}
-            style={{width: '100%', marginTop: 10}}
-            columns={this.props.column2}
-            pagination={false}
-            dataSource={this.props.data[selectedNum]} bordered
-          />
+        <div ref='exportPdf1' className={styles.printWrapper}>
+          <div className={styles.tableContainer}>
+            <text className={styles.titleText}>
+              {new Date(currentData.time).getFullYear()}年{new Date(currentData.time).getMonth() + 1}月人才派遣职工工资明细
+            </text>
+            <Table
+              loading={this.props.loading}
+              style={{width: '100%', marginTop: 10}}
+              columns={this.props.column1}
+              pagination={false}
+              dataSource={this.props.data[selectedNum]} bordered
+            />
+            <Table
+              loading={this.props.loading}
+              style={{width: '100%', marginTop: 10}}
+              columns={this.props.column2}
+              pagination={false}
+              dataSource={this.props.data[selectedNum]} bordered
+            />
 
-          <Table
-            loading={this.props.loading}
-            style={{width: '100%', marginTop: 10}}
-            columns={this.props.column3}
-            pagination={false}
-            dataSource={this.props.data[selectedNum]} bordered
-          />
-          <Table
-            loading={this.props.loading}
-            style={{width: '100%', marginTop: 10, marginBottom: 20}}
-            columns={this.props.column4}
-            pagination={false}
-            dataSource={this.props.data[selectedNum]} bordered
-          />
+            <Table
+              loading={this.props.loading}
+              style={{width: '100%', marginTop: 10}}
+              columns={this.props.column3}
+              pagination={false}
+              dataSource={this.props.data[selectedNum]} bordered
+            />
+            <Table
+              loading={this.props.loading}
+              style={{width: '100%', marginTop: 10,}}
+              columns={this.props.column4}
+              pagination={false}
+              dataSource={this.props.data[selectedNum]} bordered
+            />
+            <Table
+              loading={this.props.loading}
+              style={{width: '100%', marginTop: 10}}
+              columns={this.props.column5}
+              pagination={false}
+              dataSource={this.props.data[selectedNum]} bordered
+            />
+            <Table
+              loading={this.props.loading}
+              style={{width: '100%', marginTop: 10}}
+              columns={this.props.column6}
+              pagination={false}
+              dataSource={this.props.data[selectedNum]} bordered
+            />
+            <Table
+              loading={this.props.loading}
+              style={{width: '100%', marginTop: 10, marginBottom: 20}}
+              columns={this.props.column7}
+              pagination={false}
+              dataSource={this.props.data[selectedNum]} bordered
+            />
+          </div>
         </div>
-      </div>
       </div>
 
     )
