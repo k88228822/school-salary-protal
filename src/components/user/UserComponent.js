@@ -21,6 +21,8 @@ class UserComponent extends React.Component {
 
   onPrintOnclick() {
     let exportPdf1 = $(this.refs.exportPdf1)
+    let exportPdf2 = $(this.refs.exportPdf2)
+    $(document).find(exportPdf2).css("margin-top", "120px");
     $(document).find('body').html(exportPdf1)
     window.print()
     window.location.reload()
@@ -100,20 +102,22 @@ class UserComponent extends React.Component {
               pagination={false}
               dataSource={this.props.data[selectedNum]} bordered
             />
-            <Table
-              loading={this.props.loading}
-              style={{width: '100%', marginTop: 10}}
-              columns={this.props.column6}
-              pagination={false}
-              dataSource={this.props.data[selectedNum]} bordered
-            />
-            <Table
-              loading={this.props.loading}
-              style={{width: '100%', marginTop: 10, marginBottom: 20}}
-              columns={this.props.column7}
-              pagination={false}
-              dataSource={this.props.data[selectedNum]} bordered
-            />
+            <div ref='exportPdf2' style={{display:'flex',flexDirection:'column',width:'100%'}}>
+              <Table
+                loading={this.props.loading}
+                style={{width: '100%', marginTop: 10}}
+                columns={this.props.column6}
+                pagination={false}
+                dataSource={this.props.data[selectedNum]} bordered
+              />
+              <Table
+                loading={this.props.loading}
+                style={{width: '100%', marginTop: 10, marginBottom: 20}}
+                columns={this.props.column7}
+                pagination={false}
+                dataSource={this.props.data[selectedNum]} bordered
+              />
+            </div>
           </div>
         </div>
       </div>
