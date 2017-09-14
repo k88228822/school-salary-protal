@@ -25,7 +25,7 @@ class AppComponent extends React.Component {
         break;
       case '2':
         let pathname = this.props.rank === 0 ?
-          '/app/admin/changePassword' : '/app/user/changePassword'
+          '/app/admin/manager' : '/app/user/changePassword'
         this.props.dispatch(routerRedux.push({pathname, query: {key: data.key}}))
         break;
       case '3':
@@ -46,7 +46,6 @@ class AppComponent extends React.Component {
             <div className={styles.top}>
               <Row type="flex">
                 <Col style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}} span={12}>
-                  {/*<text className={styles.leftText}>当前工号：#{window.localStorage.getItem(usernameKey)}</text>*/}
                   <text className={styles.leftText}>工资查询系统(人才派遣职工)</text>
                 </Col>
                 <Col span={12}>

@@ -9,6 +9,8 @@ import PasswordComponent from "./components/password/PasswordComponent";
 import UserComponent from "./components/user/UserComponent";
 import SearchComponent from "./components/user/SearchComponent";
 import TempComponent from "./components/temp/TempComponent";
+import AdminComponent from "./components/admin/AdminComponent";
+import ChangeUserPassword from "./components/admin/ChangeUserPassword";
 
 
 function RouterConfig({ history }) {
@@ -24,6 +26,8 @@ function RouterConfig({ history }) {
           <IndexRoute component={UploadComponent}/>
           <Route path="/app/admin/upload" component={UploadComponent}/>
           <Route path="/app/admin/changePassword" component={PasswordComponent} />
+          <Route path="/app/admin/manager" component={AdminComponent}/>
+          <Route path="/app/admin/changeUserPassword" component={ChangeUserPassword}/>
         </Route>
       </Route>
       <Route path="/app/login" component={Login} />

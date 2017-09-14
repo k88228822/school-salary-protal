@@ -20,3 +20,7 @@ export function getSalaryData(params) {
 export function getSalaryByYear(params){
   return Net.GET(baseUrl+'/getSalaryByYear',{...params})
 }
+
+export function changeUserPasswod(params) {
+  return Net.POST(baseUrl+'/changeUserPasswordByAdmin',{...params})
+}

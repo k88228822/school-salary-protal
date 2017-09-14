@@ -14,7 +14,7 @@ const userTitle = [
 
 const adminTitle = [
   {key: '0', title: '上传', url: ''},
-  {key: '2', title: '修改密码', url: ''},
+  {key: '2', title: '其他', url: ''},
 ]
 
 export default {
@@ -80,20 +80,28 @@ export default {
       }
     },
 
-    * changePassword({payload}, {call, put, select}) {
+    * changePassword({payload}, {call, put, }) {
       yield call(appService.changePassword, {
-        name: window.localStorage.getItem(usernameKey),
+        name: payload.userName,
         password: payload.prePassword, newPassword: payload.password1
       })
       notification['success']({
         message: `修改成功，请重新登录`,
         description: ``,
-        duration: 5,
+        duration: 3,
         style: {height: 80, paddingBottom: 10},
       });
       yield put(routerRedux.push('/app/login'));
     },
-
+    * adminChangeUserPassword({payload},{call,put}){
+      yield call(appService.changeUserPasswod,{userName:payload.userName,newPassword:payload.password1})
+      notification['success']({
+        message: `修改成功`,
+        description: ``,
+        duration: 2,
+        style: {height: 80, paddingBottom: 10},
+      });
+    },
     *reload({payload},{put}){
       window.localStorage.removeItem(storageTokenKey);
       window.localStorage.removeItem(usernameKey);
