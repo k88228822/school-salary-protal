@@ -20,11 +20,11 @@ function AdminComponent(props) {
   return (
     <div className={styles.normal}>
 
-      <Card style={{ width: 300 ,fontWeight:500}} onClick={()=>{onCardPress(0)}}>
+      <Card style={{ width: 300 ,fontWeight:500,cursor:'pointer'}} onClick={()=>{onCardPress(0)}}>
         <p>修改管理员密码</p>
       </Card>
 
-      <Card onClick={()=>{onCardPress(1)}} style={{ width: 300 ,marginTop:20,fontWeight:500}} >
+      <Card onClick={()=>{onCardPress(1)}} style={{ cursor:'pointer',width: 300 ,marginTop:20,fontWeight:500}} >
         <p>修改职工密码</p>
       </Card>
 
