@@ -55,7 +55,7 @@ export default {
   subscriptions: {
     setup({dispatch, history}) {
       return history.listen(({pathname, query}) => {
-        if(pathname.startsWith('/app/user')){
+        if(pathname.indexOf('/app/user')>=0){
           dispatch(createAction('getData')())
         }
       })

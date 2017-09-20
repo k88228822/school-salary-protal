@@ -119,13 +119,13 @@ export default {
           dispatch(createAction('changeSelectKey')({selectedKey: query.key}))
         }
 
-        if (pathname.startsWith('/app/admin')) {
+        if (pathname.indexOf('/app/admin')>=0) {
           window.localStorage.getItem(roleKey) === 'ROLE_ADMIN' ?
             dispatch(createAction('setTitle')({title: adminTitle}))
             :
             dispatch(routerRedux.push('/app/login'));
 
-        } else if (pathname.startsWith('/app/user')) {
+        } else if (pathname.indexOf('/app/user')>=0) {
           window.localStorage.getItem(roleKey) === 'ROLE_USER' ?
             dispatch(createAction('setTitle')({title: userTitle}))
             :

@@ -109,7 +109,7 @@ export default {
   subscriptions: {
     setup({dispatch, history}) {
       return history.listen(({pathname, query}) => {
-        if (pathname.startsWith('/app/user/salarySearch')) {
+        if (pathname.indexOf('/app/user/salarySearch')>=0) {
           dispatch(createAction('getData')({year: new Date().getFullYear()}))
           dispatch(createAction('changeColumn')({column: defaultColumn}))
         }
