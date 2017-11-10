@@ -15,17 +15,17 @@ function RouterConfig({ history }) {
   return (
     <Router history={history}>
       <Route path="/app" component={IndexPage} >
-        <Route path="/app/user" >
+        <Route path="user" >
           <IndexRoute component={User}/>
-          <Route path="/app/user/changePassword" component={PasswordComponent} />
-          <Route path="/app/user/salarySearch" component={SearchComponent} />
+          <Route path="changePassword" component={PasswordComponent} />
+          <Route path="salarySearch" component={SearchComponent} />
         </Route>
-        <Route path="/app/admin">
+        <Route path="admin">
           <IndexRoute component={UploadComponent}/>
-          <Route path="/app/admin/upload" component={UploadComponent}/>
-          <Route path="/app/admin/changePassword" component={PasswordComponent} />
-          <Route path="/app/admin/manager" component={AdminComponent}/>
-          <Route path="/app/admin/changeUserPassword" component={ChangeUserPassword}/>
+          <Route path="upload" component={UploadComponent}/>
+          <Route path="changePassword" component={PasswordComponent} />
+          <Route path="manager" component={AdminComponent}/>
+          <Route path="changeUserPassword" component={ChangeUserPassword}/>
         </Route>
       </Route>
       <Route path="/app/login" component={Login} />
