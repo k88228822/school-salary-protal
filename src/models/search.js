@@ -102,6 +102,7 @@ export default {
         for (let j = firstDate + 1; j <= lastDate + 1; j++) {
           search.data[i]['total'] += search.data[i]['c' + j];
         }
+        search.data[i]['total']=search.data[i]['total'].toFixed(2);
       }
       yield put(createAction('setData')({data: search.data}))
     }
